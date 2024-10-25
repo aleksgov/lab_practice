@@ -13,7 +13,7 @@ public class NavigationBreadcrumb extends VBox {
 
     public NavigationBreadcrumb() {
         breadcrumbContainer = new HBox(10);
-        breadcrumbContainer.setPadding(new Insets(10, 0, 10, 10));
+        breadcrumbContainer.setPadding(new Insets(14, 0, 10, 22));
 
         mainLabel = createNavigationLabel("Главная");
         mainLabel.getStyleClass().add("active");

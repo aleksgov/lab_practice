@@ -12,8 +12,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         MainScreenScene mainScreenScene = new MainScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT);
-        Scene scene = new Scene(mainScreenScene.getRoot(), WINDOW_WIDTH, WINDOW_HEIGHT);
 
+        Scene scene = new Scene(mainScreenScene.getRoot(), WINDOW_WIDTH, WINDOW_HEIGHT);
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
 
         primaryStage.setTitle("Labs");
