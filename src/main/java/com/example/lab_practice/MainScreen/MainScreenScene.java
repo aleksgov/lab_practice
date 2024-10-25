@@ -15,7 +15,7 @@ public class MainScreenScene {
         InfoButton infoButton = new InfoButton(1368.75, 708.75);
 
         root.getChildren().addAll(background.getRectangle(), rectanglePane.getRectangle(),
-                textPanel.getText(), buttonPanel.getButtons(), lowerBar, infoButton);
+                textPanel.getText(), lowerBar, infoButton, buttonPanel.getButtons());
     }
 
     public Pane getRoot(){
