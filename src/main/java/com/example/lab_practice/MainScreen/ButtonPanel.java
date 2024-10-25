@@ -1,4 +1,4 @@
-package com.example.lab_practice;
+package com.example.lab_practice.MainScreen;
 
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;

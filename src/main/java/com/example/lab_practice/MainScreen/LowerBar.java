@@ -1,4 +1,4 @@
-package com.example.lab_practice;
+package com.example.lab_practice.MainScreen;
 
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
