@@ -18,6 +18,7 @@ public class TextPanel {
         double textWidth = text.getLayoutBounds().getWidth();
         text.setX((windowWidth - textWidth) / 3.2);
         text.setY(windowHeight / 3.5);
+
     }
     public Text getText() {
         return text;

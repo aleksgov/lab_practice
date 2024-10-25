@@ -17,9 +17,11 @@ public class Main extends Application {
         RectanglePane rectanglePane = new RectanglePane(WINDOW_WIDTH, WINDOW_HEIGHT);
         ButtonPanel buttonPanel = new ButtonPanel(WINDOW_WIDTH, WINDOW_HEIGHT);
         TextPanel textPanel = new TextPanel(WINDOW_WIDTH, WINDOW_HEIGHT);
+        LowerBar lowerBar = new LowerBar(WINDOW_WIDTH, WINDOW_HEIGHT);
+        InfoButton infoButton = new InfoButton(1368.75, 708.75);
 
         root.getChildren().addAll(background.getRectangle(), rectanglePane.getRectangle(),
-                textPanel.getText(), buttonPanel.getButtons());
+                textPanel.getText(), buttonPanel.getButtons(), lowerBar, infoButton);
 
         Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
         primaryStage.setTitle("Labs");
