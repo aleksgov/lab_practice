@@ -4,8 +4,9 @@ import javafx.scene.layout.Pane;
 
 public class MainScreenScene {
     private Pane root;
+    private NavigationBreadcrumb navigationBreadcrumb;
 
-    public MainScreenScene(double WINDOW_WIDTH, double WINDOW_HEIGHT){
+    public MainScreenScene(double WINDOW_WIDTH, double WINDOW_HEIGHT) {
         root = new Pane();
         Background background = new Background(WINDOW_WIDTH, WINDOW_HEIGHT);
         RectanglePane rectanglePane = new RectanglePane(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -14,11 +15,25 @@ public class MainScreenScene {
         LowerBar lowerBar = new LowerBar(WINDOW_WIDTH, WINDOW_HEIGHT);
         InfoButton infoButton = new InfoButton(1368.75, 708.75);
 
-        root.getChildren().addAll(background.getRectangle(), rectanglePane.getRectangle(),
-                textPanel.getText(), lowerBar, infoButton, buttonPanel.getButtons());
+        // Create and position navigation breadcrumb
+        navigationBreadcrumb = new NavigationBreadcrumb();
+
+        root.getChildren().addAll(
+                background.getRectangle(),
+                rectanglePane.getRectangle(),
+                navigationBreadcrumb,
+                textPanel.getText(),
+                lowerBar,
+                infoButton,
+                buttonPanel.getButtons()
+        );
     }
 
-    public Pane getRoot(){
+    public void updateNavigation(String screenName) {
+        navigationBreadcrumb.navigateTo(screenName);
+    }
+
+    public Pane getRoot() {
         return root;
     }
 }

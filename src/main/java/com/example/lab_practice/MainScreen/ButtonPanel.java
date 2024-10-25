@@ -43,7 +43,7 @@ public class ButtonPanel {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 Button button = new Button();
-                HBox buttonContent = new HBox(20); // Горизонтальный контейнер с отступом 20
+                HBox buttonContent = new HBox(20);
                 buttonContent.setAlignment(Pos.CENTER_LEFT);
 
                 // Цифра
@@ -51,7 +51,7 @@ public class ButtonPanel {
                 numberText.setStyle("-fx-font-family: 'Century Gothic'; -fx-font-size: 72px;");
 
                 // Контейнер для текста справа
-                VBox rightText = new VBox(5); // Вертикальный контейнер для двух строк
+                VBox rightText = new VBox(5);
                 rightText.setAlignment(Pos.CENTER_LEFT);
 
                 Text labText1 = new Text("Лабораторная");
@@ -67,7 +67,7 @@ public class ButtonPanel {
                 button.setStyle(
                         "-fx-background-color: rgba(255, 255, 255, 1); " +
                                 "-fx-background-radius: 30px; " +
-                                "-fx-padding: 10 20 10 30;"); // Добавлен отступ слева и справа
+                                "-fx-padding: 10 20 10 30;");
                 button.setLayoutX(startX + j * (buttonWidth + spacingX));
                 button.setLayoutY(startY + i * (buttonHeight + spacingY));
                 button.setEffect(shadow);
