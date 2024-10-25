@@ -6,7 +6,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextBoundsType;
 
 public class TextPanel {
-    private Text text;
+    private final Text text;
 
     public TextPanel(double windowWidth, double windowHeight) {
         text = new Text("Лабораторный практикум\nпо предмету “Управление данными”");

@@ -21,7 +21,7 @@ public class Main extends Application {
         InfoButton infoButton = new InfoButton(1368.75, 708.75);
 
         root.getChildren().addAll(background.getRectangle(), rectanglePane.getRectangle(),
-                textPanel.getText(), buttonPanel.getButtons(), lowerBar, infoButton);
+                textPanel.getText(), lowerBar, infoButton, buttonPanel.getButtons());
 
         Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
         primaryStage.setTitle("Labs");
