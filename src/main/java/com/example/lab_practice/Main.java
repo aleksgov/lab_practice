@@ -1,8 +1,8 @@
 package com.example.lab_practice;
 
+import com.example.lab_practice.MainScreen.MainScreenScene;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -11,19 +11,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Pane root = new Pane();
+        MainScreenScene mainScreenScene = new MainScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        Background background = new Background(WINDOW_WIDTH, WINDOW_HEIGHT);
-        RectanglePane rectanglePane = new RectanglePane(WINDOW_WIDTH, WINDOW_HEIGHT);
-        ButtonPanel buttonPanel = new ButtonPanel(WINDOW_WIDTH, WINDOW_HEIGHT);
-        TextPanel textPanel = new TextPanel(WINDOW_WIDTH, WINDOW_HEIGHT);
-        LowerBar lowerBar = new LowerBar(WINDOW_WIDTH, WINDOW_HEIGHT);
-        InfoButton infoButton = new InfoButton(1368.75, 708.75);
-
-        root.getChildren().addAll(background.getRectangle(), rectanglePane.getRectangle(),
-                textPanel.getText(), lowerBar, infoButton, buttonPanel.getButtons());
-
-        Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+        Scene scene = new Scene(mainScreenScene.getRoot(), WINDOW_WIDTH, WINDOW_HEIGHT);
         primaryStage.setTitle("Labs");
         primaryStage.setScene(scene);
         primaryStage.show();

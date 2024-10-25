@@ -1,4 +1,4 @@
-package com.example.lab_practice;
+package com.example.lab_practice.MainScreen;
 
 import com.example.lab_practice.commands.*;
 import javafx.geometry.Pos;
