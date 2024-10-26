@@ -1,4 +1,4 @@
-package com.example.lab_practice.MainScreen;
+package com.example.lab_practice.MainNavigationScreen;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -6,8 +6,8 @@ import javafx.scene.shape.Rectangle;
 public class RectanglePane {
     private Rectangle rectangle;
 
-    public RectanglePane(double windowWidth, double windowHeight) {
-        rectangle = new Rectangle(975, 562.5);
+    public RectanglePane(double windowWidth, double windowHeight, double w, double h) {
+        rectangle = new Rectangle(w, h);
         rectangle.setFill(Color.rgb(255, 255, 255, 0.34));
         rectangle.setArcWidth(60);
         rectangle.setArcHeight(60);

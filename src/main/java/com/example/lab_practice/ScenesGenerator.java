@@ -1,7 +1,6 @@
 package com.example.lab_practice;
 
-import com.example.lab_practice.FirstLabMainScreen.FirstLabMainScene;
-import com.example.lab_practice.MainScreen.MainScreenScene;
+import com.example.lab_practice.MainNavigationScreen.MainNavigationScreenScene;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -14,38 +13,27 @@ public class ScenesGenerator {
     private static final double WINDOW_WIDTH = 1440;
     private static final double WINDOW_HEIGHT = 810;
 
-    private Scene mainScreenScene = null;
-    private Scene firstLabMainScreenScene = null;
+    private MainNavigationScreenScene mainNavigationScreenScene = null;
 
     public Scene getMainScreenScene(){
-        if (Objects.isNull(mainScreenScene))
-            mainScreenScene = new MainScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT).getRootScene();
-        return mainScreenScene;
-    }
-
-    public void setMainScreenScene(){
-        if (Objects.isNull(mainScreenScene))
-            mainScreenScene = new MainScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT).getRootScene();
-        stage.setScene(mainScreenScene);
+        if (Objects.isNull(mainNavigationScreenScene))
+            mainNavigationScreenScene = new MainNavigationScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT);
+        mainNavigationScreenScene.setToMainScreenState();
+        return mainNavigationScreenScene.getRootScene();
     }
 
     public Scene getFirstLabMainScreenScene(){
-        if (Objects.isNull(firstLabMainScreenScene))
-            firstLabMainScreenScene = new FirstLabMainScene(WINDOW_WIDTH, WINDOW_HEIGHT).getRootScene();
-        return firstLabMainScreenScene;
-    }
-
-    public void setFirstLabMainScreenScene(){
-        if (Objects.isNull(firstLabMainScreenScene))
-            firstLabMainScreenScene = new FirstLabMainScene(WINDOW_WIDTH, WINDOW_HEIGHT).getRootScene();
-        stage.setScene(firstLabMainScreenScene);
+        if (Objects.isNull(mainNavigationScreenScene))
+            mainNavigationScreenScene = new MainNavigationScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT);
+        mainNavigationScreenScene.setToFirstLabMainScreenState();
+        return mainNavigationScreenScene.getRootScene();
     }
 
     public void setStage(Stage _stage){
         stage = _stage;
     }
 
-    public void setCustomStageScene(Scene scene){
+    public void setStageScene(Scene scene){
         stage.setScene(scene);
     }
 

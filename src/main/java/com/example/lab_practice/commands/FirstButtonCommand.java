@@ -6,6 +6,6 @@ public class FirstButtonCommand implements Command {
     private final ScenesGenerator scenesGenerator = ScenesGenerator.getInstance();
     @Override
     public void execute() {
-        scenesGenerator.setFirstLabMainScreenScene();
+        scenesGenerator.setStageScene(scenesGenerator.getFirstLabMainScreenScene());
     }
 }

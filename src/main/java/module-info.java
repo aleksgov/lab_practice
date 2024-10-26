@@ -5,6 +5,6 @@ module com.example.lab_practice {
 
     opens com.example.lab_practice to javafx.fxml;
     exports com.example.lab_practice;
-    exports com.example.lab_practice.MainScreen;
-    opens com.example.lab_practice.MainScreen to javafx.fxml;
+    exports com.example.lab_practice.MainNavigationScreen;
+    opens com.example.lab_practice.MainNavigationScreen to javafx.fxml;
 }

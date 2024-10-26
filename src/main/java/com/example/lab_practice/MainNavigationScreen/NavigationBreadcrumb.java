@@ -1,4 +1,4 @@
-package com.example.lab_practice.MainScreen;
+package com.example.lab_practice.MainNavigationScreen;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
