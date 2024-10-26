@@ -23,17 +23,29 @@ public class ScenesGenerator {
         return mainScreenScene;
     }
 
+    public void setMainScreenScene(){
+        if (Objects.isNull(mainScreenScene))
+            mainScreenScene = new MainScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT).getRootScene();
+        stage.setScene(mainScreenScene);
+    }
+
     public Scene getFirstLabMainScreenScene(){
         if (Objects.isNull(firstLabMainScreenScene))
             firstLabMainScreenScene = new FirstLabMainScene(WINDOW_WIDTH, WINDOW_HEIGHT).getRootScene();
         return firstLabMainScreenScene;
     }
 
+    public void setFirstLabMainScreenScene(){
+        if (Objects.isNull(firstLabMainScreenScene))
+            firstLabMainScreenScene = new FirstLabMainScene(WINDOW_WIDTH, WINDOW_HEIGHT).getRootScene();
+        stage.setScene(firstLabMainScreenScene);
+    }
+
     public void setStage(Stage _stage){
         stage = _stage;
     }
 
-    public void setStageScene(Scene scene){
+    public void setCustomStageScene(Scene scene){
         stage.setScene(scene);
     }
 

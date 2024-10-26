@@ -6,6 +6,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.layout.VBox;
 
+import java.util.Objects;
+
 public class NavigationBreadcrumb extends VBox {
     private HBox breadcrumbContainer;
     private Label mainLabel;
@@ -19,6 +21,9 @@ public class NavigationBreadcrumb extends VBox {
         mainLabel.getStyleClass().add("active");
         mainLabel.setOnMouseClicked(event -> navigateTo("Главная"));
         breadcrumbContainer.getChildren().add(mainLabel);
+
+        String stylesheets = Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm();
+        breadcrumbContainer.getStylesheets().add(stylesheets);
 
         getChildren().add(breadcrumbContainer);
     }

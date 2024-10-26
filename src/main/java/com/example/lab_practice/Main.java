@@ -8,9 +8,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
-
-        //scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
-
         ScenesGenerator scenesGenerator = ScenesGenerator.getInstance();
         scenesGenerator.setStage(primaryStage);
 
