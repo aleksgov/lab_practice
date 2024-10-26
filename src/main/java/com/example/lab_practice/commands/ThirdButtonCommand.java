@@ -1,8 +1,11 @@
 package com.example.lab_practice.commands;
 
+import com.example.lab_practice.ScenesGenerator;
+
 public class ThirdButtonCommand implements Command {
+    private final ScenesGenerator scenesGenerator = ScenesGenerator.getInstance();
     @Override
     public void execute() {
-        System.out.println("Third button");
+        scenesGenerator.setStageScene(scenesGenerator.getTextScreenScene());
     }
 }

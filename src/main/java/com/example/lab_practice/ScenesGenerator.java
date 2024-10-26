@@ -1,9 +1,11 @@
 package com.example.lab_practice;
 
 import com.example.lab_practice.MainNavigationScreen.MainNavigationScreenScene;
+import com.example.lab_practice.TextScreen.TextScreenScene;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.util.Objects;
 
 public class ScenesGenerator {
@@ -14,6 +16,7 @@ public class ScenesGenerator {
     private static final double WINDOW_HEIGHT = 810;
 
     private MainNavigationScreenScene mainNavigationScreenScene = null;
+    private TextScreenScene textScreenScene = null;
 
     public Scene getMainScreenScene(){
         if (Objects.isNull(mainNavigationScreenScene))
@@ -27,6 +30,13 @@ public class ScenesGenerator {
             mainNavigationScreenScene = new MainNavigationScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT);
         mainNavigationScreenScene.setToFirstLabMainScreenState();
         return mainNavigationScreenScene.getRootScene();
+    }
+
+    public Scene getTextScreenScene(){
+        if (Objects.isNull(textScreenScene))
+            textScreenScene = new TextScreenScene(WINDOW_WIDTH, WINDOW_HEIGHT);
+        textScreenScene.setText("/Texts/1_lab_text.html");
+        return textScreenScene.getRootScene();
     }
 
     public void setStage(Stage _stage){
