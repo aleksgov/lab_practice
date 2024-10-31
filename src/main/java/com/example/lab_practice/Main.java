@@ -15,7 +15,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("Tab Navigation Example");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setFullScreen(true);
+        //primaryStage.setFullScreen(true);
         primaryStage.show();
     }
 

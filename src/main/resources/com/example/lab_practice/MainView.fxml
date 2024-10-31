@@ -15,7 +15,7 @@
 
 <TabPane fx:id="TabSystem" stylesheets="@tabline.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab_practice.MainController">
    <tabs>
-      <Tab fx:id="MainTab" style="-fx-background-color: transparent; -fx-font-family: 'Century Gothic'; -fx-font-size: 18px;" text="Главная" closable="false">
+      <Tab fx:id="MainTab" closable="false" style="-fx-background-color: transparent; -fx-font-family: 'Century Gothic'; -fx-font-size: 18px;" text="Главная">
          <content>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0">
                 <children>
@@ -131,7 +131,7 @@
             </VBox>
          </content>
       </Tab>
-      <Tab fx:id="FirstLabTab" style="-fx-background-color: rgba(255, 255, 255, 0,5); -fx-font-family: 'Century Gothic'; -fx-font-size: 18px;" text="Лабораторная работа №1" closable="false">
+      <Tab fx:id="FirstLabTab" closable="false" style="-fx-background-color: rgba(255, 255, 255, 0,5); -fx-font-family: 'Century Gothic'; -fx-font-size: 18px;" text="Лабораторная работа №1">
          <content>
             <VBox fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0">
                <children>
@@ -185,7 +185,7 @@
             </VBox>
          </content>
       </Tab>
-      <Tab fx:id="TheoryFirstLabTab" style="-fx-background-color: rgba(255, 255, 255, 0,5); -fx-font-family: 'Century Gothic'; -fx-font-size: 18px;" text="Теория" closable="false">
+      <Tab fx:id="TheoryFirstLabTab" closable="false" style="-fx-background-color: rgba(255, 255, 255, 0,5); -fx-font-family: 'Century Gothic'; -fx-font-size: 18px;" text="Теория">
          <content>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0">
                <children>

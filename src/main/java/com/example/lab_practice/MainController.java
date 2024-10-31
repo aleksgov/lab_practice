@@ -39,7 +39,7 @@ public class MainController {
 
     @FXML
     TabPane TabSystem;
-
+    
     private Stack<Tab> tabStack = new Stack<>();
     private Map<Button, Tab> buttonTabMap = new HashMap<>();
 
