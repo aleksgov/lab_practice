@@ -3,7 +3,6 @@ package com.example.lab_practice;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.Background;
@@ -14,9 +13,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.util.Pair;
-
-
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,9 +1,11 @@
 .tab-pane .tab-header-area .tab:selected {
     -fx-border-color: transparent transparent #000000 transparent;
     -fx-border-width: 0 0 1 0;
-    -fx-padding: 0 0 0 0;
-    -fx-underline: true;
+    -fx-padding: 0 10 0 10;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
+
 .tab-pane .tab-header-area .tab-header-background {
     -fx-background-color: transparent;
 }
@@ -11,11 +13,8 @@
 .tab {
     -fx-background-color: transparent;
     -fx-font-family: 'Century Gothic';
+    -fx-padding: 0 10 0 10;
     -fx-font-size: 18px;
-}
-
-.tab:selected {
-    -fx-underline: true;
 }
 
 .header-text {
