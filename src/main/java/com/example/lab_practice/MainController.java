@@ -2,6 +2,7 @@ package com.example.lab_practice;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 
@@ -44,7 +45,6 @@ public class MainController {
     TabPane TabSystem;
 
     private Map<Button, Tab> buttonTabMap = new HashMap<>();
-
     private boolean isColorChanged = false;
 
     @FXML
@@ -63,6 +63,17 @@ public class MainController {
         TabSystem.getSelectionModel().selectedItemProperty().addListener((observable, oldTab, newTab) -> {
             if (oldTab != null && newTab != null) {
                 handleBackNavigation(newTab);
+            }
+            if (newTab != null) {
+                int index = TabSystem.getTabs().indexOf(newTab);
+                if (index > 0) {
+                    if (!(TabSystem.getTabs().get(index - 1).getText().equals("→"))) {
+                        Tab arrowTab = new Tab("→");
+                        arrowTab.getStyleClass().add("tab-arrow");
+                        arrowTab.setDisable(true);
+                        TabSystem.getTabs().add(index, arrowTab);
+                    }
+                }
             }
         });
     }

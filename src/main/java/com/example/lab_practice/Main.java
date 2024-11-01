@@ -13,7 +13,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
         Parent root = loader.load();
 
-        primaryStage.setTitle("Tab Navigation Example");
+        primaryStage.setTitle("Labs");
         primaryStage.setScene(new Scene(root));
         //primaryStage.setFullScreen(true);
         primaryStage.show();

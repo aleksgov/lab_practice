@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
@@ -7,23 +8,23 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.shape.Arc?>
-<TabPane fx:id="TabSystem" stylesheets="@tabline.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab_practice.MainController">
+<TabPane fx:id="TabSystem" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab_practice.MainController">
    <tabs>
-      <Tab fx:id="MainTab" text="Главная" closable="false">
+      <Tab fx:id="MainTab" closable="false" text="Главная">
          <content>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0">
                 <children>
                     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
                         <children>
                             <!-- Прямоугольник с градиентом -->
-                            <Rectangle arcHeight="5.0" arcWidth="5.0" height="810.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" styleClass="main-background"/>
-                            <Rectangle fx:id="RectanglePane" arcHeight="60.0" arcWidth="60.0" fill="#ffffff59" height="562.5" layoutX="233.0" layoutY="112.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="975.0"/>
-                            <Text layoutX="380.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Лабораторный практикум&#10;по предмету “Управление данными”" textAlignment="CENTER" wrappingWidth="718.076171875" styleClass="header-text"/>
+                            <Rectangle arcHeight="5.0" arcWidth="5.0" height="810.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="main-background" width="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            <Rectangle fx:id="RectanglePane" arcHeight="60.0" arcWidth="60.0" fill="#ffffff59" height="562.5" layoutX="233.0" layoutY="112.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="975.0" />
+                            <Text layoutX="380.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header-text" text="Лабораторный практикум&#10;по предмету “Управление данными”" textAlignment="CENTER" wrappingWidth="718.076171875" />
                             <Button fx:id="FirstLabButton" layoutX="421.0" layoutY="337.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="112.5" prefWidth="277.5" styleClass="lab-button" text="1">
                                 <font>
                                     <Font name="Century Gothic" size="72.0" />
@@ -115,8 +116,8 @@
                                 </font>
                                 <graphic>
                                     <AnchorPane>
-                                            <Arc fx:id="arc1" centerX="26.25" centerY="26.25" fill="#FF9000" opacity="0.3" length="180.0" radiusX="20" radiusY="20.0" startAngle="45.0" type="ROUND" />
-                                            <Arc fx:id="arc2" centerX="26.25" centerY="26.25" fill="#0066AE" opacity="0.3" length="180.0" radiusX="20.0" radiusY="20.0" startAngle="225.0" type="ROUND" />
+                                            <Arc fx:id="arc1" centerX="26.25" centerY="26.25" fill="#FF9000" length="180.0" opacity="0.3" radiusX="20" radiusY="20.0" startAngle="45.0" type="ROUND" />
+                                            <Arc fx:id="arc2" centerX="26.25" centerY="26.25" fill="#0066AE" length="180.0" opacity="0.3" radiusX="20.0" radiusY="20.0" startAngle="225.0" type="ROUND" />
                                     </AnchorPane>
                                 </graphic>
                                 <cursor>
@@ -129,13 +130,13 @@
             </VBox>
          </content>
       </Tab>
-      <Tab fx:id="FirstLabTab" text="Лабораторная работа №1" closable="false">
+      <Tab fx:id="FirstLabTab" closable="false" text="Лабораторная работа №1">
          <content>
             <VBox fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0">
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
                      <children>
-                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="810.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" styleClass="main-background"/>
+                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="810.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="main-background" width="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <Rectangle arcHeight="60.0" arcWidth="60.0" fill="#ffffff59" height="514.5" layoutX="263.0" layoutY="147.75" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="913.5" />
                         <Text layoutX="366.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Лабораторная работа №1&#10;" textAlignment="CENTER" wrappingWidth="718.076171875">
                            <font>
@@ -173,13 +174,13 @@
             </VBox>
          </content>
       </Tab>
-      <Tab fx:id="TheoryFirstLabTab" text="Теория" closable="false">
+      <Tab fx:id="TheoryFirstLabTab" closable="false" text="Теория">
          <content>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0">
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
                      <children>
-                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="810.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" styleClass="main-background"/>
+                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="810.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="main-background" width="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <ScrollPane fx:id="ScrollPanel" layoutX="148.0" layoutY="153.0" prefHeight="689.0" prefWidth="1144.0" style="-fx-background-radius: 60; -fx-border-radius: 60; -fx-background-color: rgba(255, 255, 255, 1);" stylesheets="@scroll.css" />
                         <Rectangle fill="#888888" height="30.0" layoutY="780.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1440.0" />
                      </children>
@@ -189,4 +190,8 @@
          </content>
       </Tab>
    </tabs>
+   <stylesheets>
+      <URL value="@tabline.css" />
+      <URL value="@tab_arrow.css" />
+   </stylesheets>
 </TabPane>
