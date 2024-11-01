@@ -4,9 +4,12 @@
     -fx-border-insets: 0;
     -fx-border-radius: 0;
 }
-.tab {
-    -fx-background-color: #ffffff;
-}
-.tab:selected {
+.tab-pane .tab-header-area .tab:selected {
+    -fx-border-color: transparent transparent #000000 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 0 0;
     -fx-underline: true;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
 }
