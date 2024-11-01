@@ -11,8 +11,13 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.util.Pair;
+
 
 import java.lang.reflect.Array;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,7 +63,10 @@ public class MainController {
     @FXML
     TabPane TabSystem;
 
-    private Map<Button, Tab> buttonTabMap = new HashMap<>();
+    @FXML
+    WebView webView;
+
+    private Map<Button, Pair<Tab, String>> buttonTabMap = new HashMap<>();
 
     private Map<Button, String> buttonColorMap = new HashMap<>();
     private Button displayedButton = null;
@@ -66,12 +74,19 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        buttonTabMap.put(FirstLabButton, FirstLabTab);
-        buttonTabMap.put(TheoryLabButton, TheoryFirstLabTab);
-
+        buttonTabMap.put(FirstLabButton, new Pair<>(FirstLabTab, null));
+        buttonTabMap.put(TheoryLabButton, new Pair<>(TheoryFirstLabTab, "Lab1.html"));
 
         for (var key: buttonTabMap.keySet()){
-            key.setOnAction(event -> switchToTab(buttonTabMap.get(key)));
+            key.setOnAction(event -> {
+                switchToTab(buttonTabMap.get(key).getKey());
+                if (Objects.nonNull(buttonTabMap.get(key).getValue())){
+                    WebEngine webEngine = webView.getEngine();
+                    URL url = getClass().getResource(buttonTabMap.get(key).getValue());
+                    webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
+                    webEngine.load(url.toString());
+                }
+            });
         }
 
         buttonColorMap.put(changeColorButton, "blue_yellow.css");
@@ -130,12 +145,10 @@ public class MainController {
 
     private void handleBackNavigation(Tab selectedTab) {
         while(!TabSystem.getTabs().isEmpty()){
-            if (TabSystem.getTabs().getLast() != selectedTab){
+            if (TabSystem.getTabs().getLast() != selectedTab)
                 TabSystem.getTabs().removeLast();
-            }
-            else{
+            else
                 break;
-            }
         }
     }
 
