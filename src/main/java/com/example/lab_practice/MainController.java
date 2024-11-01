@@ -4,9 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
 public class MainController {
 
@@ -24,6 +24,9 @@ public class MainController {
 
     @FXML
     Button infoButton;
+
+    @FXML
+    Button changeColorButton;
 
     @FXML
     Button TheoryLabButton;
@@ -44,6 +47,7 @@ public class MainController {
 
     @FXML
     public void initialize() {
+        changeColorButton.setOnAction(event -> changeColor());
 
         buttonTabMap.put(FirstLabButton, FirstLabTab);
         buttonTabMap.put(TheoryLabButton, TheoryFirstLabTab);
@@ -77,5 +81,9 @@ public class MainController {
                 break;
             }
         }
+    }
+
+    private void changeColor(){
+        TabSystem.getStylesheets().add(getClass().getResource("new_color.css").toExternalForm());
     }
 }
