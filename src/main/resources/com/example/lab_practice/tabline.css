@@ -6,7 +6,7 @@
 }
 .tab {
     -fx-background-color: #ffffff;
-
+}
 .tab:selected {
     -fx-underline: true;
 }
