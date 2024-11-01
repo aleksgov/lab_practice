@@ -18,10 +18,6 @@
     -fx-underline: true;
 }
 
-.main-background {
-    -fx-fill: linear-gradient(to bottom right, rgba(255, 144, 0, 0.3) 19%, rgba(0, 102, 174, 0.3) 81%);;
-}
-
 .header-text {
     -fx-font-family: 'Century Gothic';
     -fx-font-size: 36px;

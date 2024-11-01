@@ -110,20 +110,30 @@
                                     <Cursor fx:constant="HAND" />
                                 </cursor>
                             </Button>
-                            <Button fx:id="changeColorButton" layoutX="1368.75" layoutY="40" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="52.5" prefWidth="52.5" styleClass="round-button">
-                                <font>
-                                    <Font name="Century Gothic Bold" size="36.0" />
-                                </font>
-                                <graphic>
-                                    <AnchorPane>
-                                            <Arc fx:id="arc1" centerX="26.25" centerY="26.25" fill="#FF9000" length="180.0" opacity="0.3" radiusX="20" radiusY="20.0" startAngle="45.0" type="ROUND" />
-                                            <Arc fx:id="arc2" centerX="26.25" centerY="26.25" fill="#0066AE" length="180.0" opacity="0.3" radiusX="20.0" radiusY="20.0" startAngle="225.0" type="ROUND" />
-                                    </AnchorPane>
-                                </graphic>
-                                <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                </cursor>
-                            </Button>
+                            <VBox fx:id="colorButtonsContainer" layoutX="1358.75" layoutY="20" alignment="TOP_CENTER" spacing="10.0" style="-fx-padding: 10;">
+                                <Button fx:id="changeColorButton" mnemonicParsing="false" prefHeight="52.5" prefWidth="52.5" styleClass="round-button">
+                                    <graphic>
+                                        <AnchorPane>
+                                            <Arc centerX="26.25" centerY="26.25" fill="#FF9000" opacity="0.3" length="180.0" radiusX="20" radiusY="20.0" startAngle="45.0" type="ROUND" />
+                                            <Arc centerX="26.25" centerY="26.25" fill="#0066AE" opacity="0.3" length="180.0" radiusX="20.0" radiusY="20.0" startAngle="225.0" type="ROUND" />
+                                        </AnchorPane>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="changeColorButton1" mnemonicParsing="false" prefHeight="52.5" prefWidth="52.5" styleClass="round-button">
+                                    <graphic>
+                                        <AnchorPane>
+                                            <Arc centerX="26.25" centerY="26.25" fill="#90ff00" opacity="0.3" length="180.0" radiusX="20" radiusY="20.0" startAngle="45.0" type="ROUND" />
+                                            <Arc centerX="26.25" centerY="26.25" fill="#AE6600" opacity="0.3" length="180.0" radiusX="20.0" radiusY="20.0" startAngle="225.0" type="ROUND" />
+                                        </AnchorPane>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                            </VBox>
                         </children>
                     </AnchorPane>
                 </children>

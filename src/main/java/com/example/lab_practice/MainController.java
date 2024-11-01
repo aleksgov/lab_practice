@@ -1,16 +1,24 @@
 package com.example.lab_practice;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class MainController {
-
     @FXML
     Button FirstLabButton;
 
@@ -30,6 +38,12 @@ public class MainController {
     Button changeColorButton;
 
     @FXML
+    Button changeColorButton1;
+
+    @FXML
+    VBox colorButtonsContainer;
+
+    @FXML
     Button TheoryLabButton;
 
     @FXML
@@ -45,17 +59,44 @@ public class MainController {
     TabPane TabSystem;
 
     private Map<Button, Tab> buttonTabMap = new HashMap<>();
-    private boolean isColorChanged = false;
+
+    private Map<Button, String> buttonColorMap = new HashMap<>();
+    private Button displayedButton = null;
+    private ArrayList<String> styleFiles = new ArrayList<>();
 
     @FXML
     public void initialize() {
-        changeColorButton.setOnAction(event -> changeColor());
-
         buttonTabMap.put(FirstLabButton, FirstLabTab);
         buttonTabMap.put(TheoryLabButton, TheoryFirstLabTab);
 
+
         for (var key: buttonTabMap.keySet()){
             key.setOnAction(event -> switchToTab(buttonTabMap.get(key)));
+        }
+
+        buttonColorMap.put(changeColorButton, "blue_yellow.css");
+        buttonColorMap.put(changeColorButton1, "green_orange.css");
+
+        for (var key: buttonColorMap.keySet()){
+            if (Objects.isNull(displayedButton)){
+                displayedButton = key;
+            }
+
+            key.setOnAction(event -> {
+                if (colorButtonsContainer.getChildren().size() != 1){
+                    displayedButton = key;
+                    colorButtonsContainer.getChildren().setAll(key);
+                    changeColor(buttonColorMap.get(key));
+                    colorButtonsContainer.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY)));
+                } else if (displayedButton == key) {
+                    colorButtonsContainer.getChildren().setAll(buttonColorMap.keySet());
+                    colorButtonsContainer.getChildren().remove(key);
+                    colorButtonsContainer.getChildren().addFirst(key);
+                    colorButtonsContainer.setBackground(new Background(new BackgroundFill(new Color(1, 1, 1, 0.65), new CornerRadii(10), Insets.EMPTY)));
+                }
+            });
+
+            styleFiles.add(buttonColorMap.get(key));
         }
 
         TabSystem.getTabs().setAll(MainTab);
@@ -76,6 +117,8 @@ public class MainController {
                 }
             }
         });
+
+        changeColorButton.fire();
     }
 
     private void switchToTab(Tab newTab) {
@@ -96,12 +139,10 @@ public class MainController {
         }
     }
 
-    private void changeColor() {
-        if (isColorChanged) {
-            TabSystem.getStylesheets().remove(getClass().getResource("new_color.css").toExternalForm());
-        } else {
-            TabSystem.getStylesheets().add(getClass().getResource("new_color.css").toExternalForm());
+    private void changeColor(String path) {
+        for (var file: styleFiles){
+            TabSystem.getStylesheets().remove(Objects.requireNonNull(getClass().getResource(file)).toExternalForm());
         }
-        isColorChanged = !isColorChanged;
+        TabSystem.getStylesheets().add(Objects.requireNonNull(getClass().getResource(path)).toExternalForm());
     }
 }
