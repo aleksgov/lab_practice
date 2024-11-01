@@ -45,6 +45,8 @@ public class MainController {
 
     private Map<Button, Tab> buttonTabMap = new HashMap<>();
 
+    private boolean isColorChanged = false;
+
     @FXML
     public void initialize() {
         changeColorButton.setOnAction(event -> changeColor());
@@ -83,7 +85,12 @@ public class MainController {
         }
     }
 
-    private void changeColor(){
-        TabSystem.getStylesheets().add(getClass().getResource("new_color.css").toExternalForm());
+    private void changeColor() {
+        if (isColorChanged) {
+            TabSystem.getStylesheets().remove(getClass().getResource("new_color.css").toExternalForm());
+        } else {
+            TabSystem.getStylesheets().add(getClass().getResource("new_color.css").toExternalForm());
+        }
+        isColorChanged = !isColorChanged;
     }
 }
