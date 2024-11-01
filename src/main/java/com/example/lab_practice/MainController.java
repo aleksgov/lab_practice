@@ -40,7 +40,6 @@ public class MainController {
     @FXML
     TabPane TabSystem;
 
-    private Stack<Tab> tabStack = new Stack<>();
     private Map<Button, Tab> buttonTabMap = new HashMap<>();
 
     @FXML
@@ -49,15 +48,11 @@ public class MainController {
         buttonTabMap.put(FirstLabButton, FirstLabTab);
         buttonTabMap.put(TheoryLabButton, TheoryFirstLabTab);
 
-        FirstLabButton.setOnAction(event -> switchToTab(FirstLabTab));
-        TheoryLabButton.setOnAction(event -> switchToTab(TheoryFirstLabTab));
-
-        for (int i = TabSystem.getTabs().size() - 1; i >= 0; i--) {
-            Tab tab = TabSystem.getTabs().get(i);
-            if (tab != MainTab) {
-                TabSystem.getTabs().remove(tab);
-            }
+        for (var key: buttonTabMap.keySet()){
+            key.setOnAction(event -> switchToTab(buttonTabMap.get(key)));
         }
+
+        TabSystem.getTabs().setAll(MainTab);
 
         TabSystem.getSelectionModel().selectedItemProperty().addListener((observable, oldTab, newTab) -> {
             if (oldTab != null && newTab != null) {
@@ -70,21 +65,17 @@ public class MainController {
         if (!TabSystem.getTabs().contains(newTab)) {
             TabSystem.getTabs().add(newTab);
         }
-        tabStack.push(newTab);
         TabSystem.getSelectionModel().select(newTab);
     }
 
     private void handleBackNavigation(Tab selectedTab) {
-        while (!tabStack.isEmpty()) {
-            Tab currentTab = tabStack.peek();
-            if (currentTab != selectedTab) {
-                tabStack.pop();
-                TabSystem.getTabs().remove(currentTab);
-            } else {
+        while(!TabSystem.getTabs().isEmpty()){
+            if (TabSystem.getTabs().getLast() != selectedTab){
+                TabSystem.getTabs().removeLast();
+            }
+            else{
                 break;
             }
         }
-        tabStack.push(selectedTab);
     }
-
 }
