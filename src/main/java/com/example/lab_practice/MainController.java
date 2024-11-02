@@ -2,9 +2,7 @@ package com.example.lab_practice;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -48,6 +46,9 @@ public class MainController {
     Button TheoryLabButton;
 
     @FXML
+    Button ExampleFirstLabButton;
+
+    @FXML
     Tab MainTab;
 
     @FXML
@@ -57,10 +58,23 @@ public class MainController {
     Tab TheoryFirstLabTab;
 
     @FXML
+    Tab ExampleFirstLabTab;
+
+    @FXML
     TabPane TabSystem;
 
     @FXML
     WebView webView;
+
+    @FXML
+    TitledPane firstStep;
+
+    @FXML
+    TitledPane secondStep;
+
+    @FXML
+    TitledPane thirdStep;
+
 
     private Map<Button, Pair<Tab, String>> buttonTabMap = new HashMap<>();
 
@@ -72,6 +86,7 @@ public class MainController {
     public void initialize() {
         buttonTabMap.put(FirstLabButton, new Pair<>(FirstLabTab, null));
         buttonTabMap.put(TheoryLabButton, new Pair<>(TheoryFirstLabTab, "Lab1.html"));
+        buttonTabMap.put(ExampleFirstLabButton, new Pair<>(ExampleFirstLabTab, null));
 
         for (var key: buttonTabMap.keySet()){
             key.setOnAction(event -> {
@@ -128,8 +143,23 @@ public class MainController {
                 }
             }
         });
+        setupTitledPane(firstStep);
+        setupTitledPane(secondStep);
+        setupTitledPane(thirdStep);
 
         changeColorButton.fire();
+    }
+
+    private void setupTitledPane(TitledPane titledPane) {
+        titledPane.expandedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                titledPane.toFront();
+                titledPane.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);");
+            } else {
+                titledPane.setStyle("");
+                titledPane.toBack();
+            }
+        });
     }
 
     private void switchToTab(Tab newTab) {
