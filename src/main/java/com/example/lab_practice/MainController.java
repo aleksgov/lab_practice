@@ -148,23 +148,7 @@ public class MainController {
                 }
             }
         });
-        setupTitledPane(firstStep);
-        setupTitledPane(secondStep);
-        setupTitledPane(thirdStep);
-
         changeColorButton.fire();
-    }
-
-    private void setupTitledPane(TitledPane titledPane) {
-        titledPane.expandedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                titledPane.toFront();
-                titledPane.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);");
-            } else {
-                titledPane.setStyle("");
-                titledPane.toBack();
-            }
-        });
     }
 
     private void switchToTab(Tab newTab) {
