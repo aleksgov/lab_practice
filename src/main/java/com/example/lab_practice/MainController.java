@@ -68,19 +68,6 @@ public class MainController {
     @FXML
     WebView webView;
 
-    @FXML
-    TitledPane firstStep;
-
-    @FXML
-    TitledPane secondStep;
-
-    @FXML
-    TitledPane thirdStep;
-
-    @FXML
-    ScrollPane ScrollExample;
-
-
     private Map<Button, Pair<Tab, String>> buttonTabMap = new HashMap<>();
 
     private Map<Button, String> buttonColorMap = new HashMap<>();
@@ -92,8 +79,6 @@ public class MainController {
         buttonTabMap.put(FirstLabButton, new Pair<>(FirstLabTab, null));
         buttonTabMap.put(TheoryLabButton, new Pair<>(TheoryFirstLabTab, "Lab1.html"));
         buttonTabMap.put(ExampleFirstLabButton, new Pair<>(ExampleFirstLabTab, null));
-
-        ScrollExample.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 
         for (var key: buttonTabMap.keySet()){
             key.setOnAction(event -> {
