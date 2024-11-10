@@ -1,0 +1,17 @@
+.jfx-button {
+    -fx-background-color: white !important;
+    -fx-background-radius: 30px;
+    -fx-padding: 10 20 10 10;
+}
+
+.jfx-button:hover {
+    -fx-background-color: white;
+}
+
+.jfx-button:pressed {
+    -fx-background-color: white;
+}
+
+.jfx-button:focused {
+    -fx-background-color: white;
+}

@@ -1,0 +1,29 @@
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-hbar-policy: never;
+}
+
+.scroll-pane .viewport {
+    -fx-background: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: lightgray;
+    -fx-background-radius: 5;
+    -fx-pref-width: 8;
+}
+
+.scroll-pane .thumb {
+    -fx-background-color: #888;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane .thumb:vertical {
+    -fx-background-color: #888;
+}
+
+.scroll-pane .scroll-bar:hover {
+    -fx-background-color: #aaa;
+}
+

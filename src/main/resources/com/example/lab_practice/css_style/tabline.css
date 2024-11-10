@@ -1,0 +1,32 @@
+.tab-pane .tab-header-area .tab:selected {
+    -fx-border-color: transparent transparent #000000 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 10 0 10;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: transparent;
+    -fx-font-family: 'Century Gothic';
+    -fx-padding: 0 10 0 10;
+    -fx-font-size: 18px;
+}
+
+.header-text {
+    -fx-font-family: 'Century Gothic';
+    -fx-font-size: 36px;
+}
+
+.round-button {
+    -fx-background-radius: 100;
+    -fx-font-family: 'Century Gothic';
+    -fx-padding: 0;
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
